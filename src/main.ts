@@ -13,14 +13,7 @@ class Grid {
    * @returns 
    */
   createArr() {
-    const arr = [];
-    for (let i = 0; i < this.res; i++) {
-      const row = [];
-      for (let j = 0; j < this.res; j++) {
-        row.push(0);
-      }
-      arr.push(row);
-    }
+    const arr = new Array(this.res).fill(null).map(() => new Array(this.res).fill(0));
     return arr;
   }
   /**
@@ -39,7 +32,7 @@ class Grid {
    * @param val 
    */
   set(x: number = 0, y: number = 0, val: number = 0) {
-    if (x < this.arr.length && y < this.arr.length) {
+    if (x >= 0 && x < this.arr.length && y >= 0 && y < this.arr[0].length) {
       this.arr[x][y] = val;
     }
   }
@@ -72,6 +65,8 @@ class Grid {
 }
 
 
+let timer = 0;
+let w = canvas.width/40;
 const grid = new Grid();
 const mouse = {
   down: false,
@@ -84,13 +79,11 @@ canvas.addEventListener("mouseup", (e) => {
 });
 canvas.addEventListener("mousemove", (e) => {
   if (mouse.down) {
-    const x = Math.floor(e.offsetX / 10);
-    const y = Math.floor(e.offsetY / 10);
+    const x = Math.floor(e.x/w);
+    const y = Math.floor(e.y/w);
     grid.set(x, y, 5);
   }
 });
-let timer = 0;
-let w = canvas.width/40;
 
 function animate(){
   grid.update();
