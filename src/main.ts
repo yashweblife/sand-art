@@ -36,8 +36,8 @@ function animate() {
   }
 
   timer += 0.05;
-  grid.arr[30][20] = 5 * Math.sin(timer);
-  grid.arr[10][20] = 5 * Math.cos(timer);
+  grid.arr[19][20] = 5 * Math.cos(timer);
+  grid.arr[21][20] = -5 * Math.cos(timer);
   c.closePath();
   requestAnimationFrame(animate);
 }
