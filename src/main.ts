@@ -1,4 +1,5 @@
 import { c, canvas, Grid, mouse } from "./lib";
+import "./style.css";
 
 let timer = 0;
 let w = canvas.width / 40;
@@ -12,8 +13,8 @@ canvas.addEventListener("mouseup", (e) => {
 });
 canvas.addEventListener("mousemove", (e) => {
   if (mouse.down) {
-    const x = Math.floor(e.x / w);
-    const y = Math.floor(e.y / w);
+    const x = Math.floor(e.offsetX / w);
+    const y = Math.floor(e.offsetY / w);
     grid.set(x, y, 5);
   }
 });
