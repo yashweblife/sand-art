@@ -18,8 +18,22 @@ canvas.addEventListener("mousemove", (e) => {
     grid.set(x, y, 5);
   }
 });
+canvas.addEventListener("touchstart", () => {
+  mouse.down = true;
+})
+canvas.addEventListener("touchend", () => {
+  mouse.down = false;
+})
+canvas.addEventListener("touchmove", (e) => {
+  if (mouse.down) {
+    const x = Math.floor(e.touches[0].clientX / w);
+    const y = Math.floor(e.touches[0].clientY / w);
+    grid.set(x, y, 5);
+  }
+})
+
 window.addEventListener("resize", () => {
-  if(window.innerWidth > 700){
+  if (window.innerWidth > 700) {
     canvas.height = 700;
     canvas.width = 700;
   } else {
@@ -40,9 +54,9 @@ function animate() {
       let r = val > 0 ? 255 : 0;
       let g = Math.floor(Math.abs(val) * 255);
       let b = val <= 0 ? 255 : 0;
-      let size = 10*val+5;
+      let size = 10 * val + 5;
       c.fillStyle = `rgba(${r},${g},${b},${Math.abs(val)})`;
-      c.fillRect(i * w - size/2, j * w - size/2, size, size);
+      c.fillRect(i * w - size / 2, j * w - size / 2, size, size);
     }
   }
 
