@@ -5,10 +5,10 @@ let timer = 0;
 let w = canvas.width / 40;
 const grid = new Grid();
 
-canvas.addEventListener("mousedown", (e) => {
+canvas.addEventListener("mousedown", () => {
   mouse.down = true;
 });
-canvas.addEventListener("mouseup", (e) => {
+canvas.addEventListener("mouseup", () => {
   mouse.down = false;
 });
 canvas.addEventListener("mousemove", (e) => {
