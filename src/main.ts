@@ -1,16 +1,9 @@
-import { Grid } from "./lib";
-
-const canvas = document.querySelector("#canvas") as HTMLCanvasElement;
-canvas.height = 500;
-canvas.width = 500;
-const c = canvas.getContext("2d") as CanvasRenderingContext2D;
+import { c, canvas, Grid, mouse } from "./lib";
 
 let timer = 0;
 let w = canvas.width / 40;
 const grid = new Grid();
-const mouse = {
-  down: false,
-};
+
 canvas.addEventListener("mousedown", (e) => {
   mouse.down = true;
 });
