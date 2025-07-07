@@ -2,8 +2,8 @@ import { c, canvas, Grid, mouse } from "./lib";
 import "./style.css";
 
 let timer = 0;
-let w = canvas.width / 40;
 const grid = new Grid();
+let w = canvas.width / grid.res;
 
 canvas.addEventListener("mousedown", () => {
   mouse.down = true;
