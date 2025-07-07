@@ -18,7 +18,17 @@ canvas.addEventListener("mousemove", (e) => {
     grid.set(x, y, 5);
   }
 });
+window.addEventListener("resize", () => {
+  if(window.innerWidth > 700){
+    canvas.height = 700;
+    canvas.width = 700;
+  } else {
+    canvas.height = 300;
+    canvas.width = 300;
+  }
+  w = canvas.width / grid.res;
 
+})
 function animate() {
   grid.update();
   c.fillStyle = "rgba(0,0,0,0.08)";
