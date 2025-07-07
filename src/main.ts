@@ -21,7 +21,7 @@ canvas.addEventListener("mousemove", (e) => {
 
 function animate() {
   grid.update();
-  c.fillStyle = "rgba(0,0,0,0.05)";
+  c.fillStyle = "rgba(0,0,0,0.08)";
   c.fillRect(0, 0, canvas.width, canvas.height);
   c.beginPath();
   for (let i = 0; i < grid.res; i++) {
@@ -30,8 +30,9 @@ function animate() {
       let r = val > 0 ? 255 : 0;
       let g = Math.floor(Math.abs(val) * 255);
       let b = val <= 0 ? 255 : 0;
+      let size = 10*val+5;
       c.fillStyle = `rgba(${r},${g},${b},${Math.abs(val)})`;
-      c.fillRect(i * w, j * w, 10, 10);
+      c.fillRect(i * w - size/2, j * w - size/2, size, size);
     }
   }
 
