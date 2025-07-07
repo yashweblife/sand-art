@@ -1,3 +1,5 @@
+![Screen Shot](./ss.png "Title")
+
 # Fluid Simulation and Sand Art
 
 This project is a demonstration of how we can simulate fluid movement using a 2D grid system.
