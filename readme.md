@@ -6,6 +6,8 @@ This project is a demonstration of how we can simulate fluid movement using a 2D
 
 The concept is rather simple, each frame we create a new grid with updated values based on the previous grid. Then we draw the new grid on top of the previous grid.This is instead of updating the previous grid directly.
 
+#### Visit the site
+[Sand Art](https://yashweblife.github.io/sand-art/)
 
 ### Gettings Started
 
